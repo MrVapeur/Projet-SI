@@ -18,13 +18,16 @@
 	$Query ="UPDATE $cours SET `present`=false WHERE 1";
 	$Result = $Connect->query($Query);
 	
-	//A ajouter : création du code !
-	$Query ="UPDATE professeur SET `code`=0000 WHERE `nom`=$nom";
+    //Création du code 
+    $code = rand(1000,9999);
+    
+	//Envoi du code à la base de données
+	$Query ="UPDATE professeur SET `code`=$code WHERE `nom`='$nom'";
 	$Result = $Connect->query($Query);
 
 
 	//Affichage du code pour le professeur
-	echo "code = 0000";
+	echo "code = $code";
 
 	//Déconnexion à la base de données
 	mysqli_close($Connect);
