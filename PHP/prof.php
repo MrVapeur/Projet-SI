@@ -27,10 +27,15 @@
 			if ($Data = mysqli_fetch_array($Result))
 			{
 				echo "<p>Prochain cours</p>";
+                echo "<br>";
 				echo "<p>$Data[0] - $Data[1]</p>";
+                echo "<br>";
 				echo "<p>$Data[2]</p>";
+                echo "<br>";
                 echo "<p>$Data[3]</p>";
+                echo "<br>";
                 echo "<p>$Data[4]</p>";
+                echo "<br>";
 			}
 			else
 			{
@@ -68,9 +73,9 @@
 
 			if ($Data = mysqli_fetch_array($Result))
 			{
-				echo "Prochain cours<br/>";
-				echo "$Data[0] - $Data[1]<br/>";
-				echo "$Data[2]<br/>$Data[3]<br/>$Data[4]<br/>";
+				echo "Prochain cours<br>";
+				echo "$Data[0] - $Data[1]<br>";
+				echo "$Data[2]<br>$Data[3]<br>$Data[4]<br>";
 			}
 			else
 			{

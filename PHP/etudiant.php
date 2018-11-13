@@ -32,10 +32,15 @@
         if ($Data = mysqli_fetch_array($Result))
         {
             echo "<h1>Prochain cours</h1>";
+            echo "<br>";
             echo "<p>$Data[0] - $Data[1]</p>";
+            echo "<br>";
             echo "<p>$Data[2]</p>";
+            echo "<br>";
             echo "<p>$Data[3]</p>";
+            echo "<br>";
             echo "<p>$Data[4]</p>";
+            echo "<br>";
         }
         else
         {
