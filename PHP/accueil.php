@@ -45,30 +45,10 @@
         echo "</form>"
 ?>
 
-            <!--form class="form-signin"> [OK]
-                   
-                    <h1 class="h3 mb-3 font-weight-normal">Identifiez vous ici</h1> [OK] 
-                    
-                    <label for="inputEmail" class="sr-only">Email address</label>[OK]
-                    
-                    <input type="text" id="inputId" class="form-control" placeholder="Identifiant" required autofocus>[OK]
-                    
-                    <label for="inputPassword" class="sr-only">Password</label>[OK]
-                    
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
-                    <div class="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Se souvenir de moi
-                        </label>
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
-                    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-                </form-->
-
         </div>
     </div>
 
 
-    </body>
+</body>
 
 </html>
