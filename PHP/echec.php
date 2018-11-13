@@ -29,7 +29,7 @@
         
         echo "<form class='form-signin' action='connexionCompte.php' method='post'><p>";
             
-            echo "<h2>Identifiant ou mot de passe erroné. Veuillez réessayer.</h2>";
+            echo "<h3>Identifiant ou mot de passe erroné. Veuillez réessayer.</h3>";
             echo "<h1 class='h3 mb-3 font-weight-normal'>Identifiez vous ici</h1>";
             echo "<label for='inputEmail' class='sr-only'>Identifiant</label>";
             echo "<input type='text' name='id' id='id' class='form-control' placeholder='Identifiant' required autofocus/>";
@@ -52,17 +52,3 @@
 </body>
 
 </html>
-
-<!--?php
-    echo "<br/>Identifiant ou mot de passe erroné. Veuillez réessayer.<br/>";
-    //En cas d'erreur de connexion, renvoi du formulaire de connexion
-    echo "<form action='connexionCompte.php' method='post'><p>";
-    echo "<label>Identifiant :</label>
-		        <input name='id' id='id' type='text'/>
-		        <br/><br/>";
-    echo "<label>Mot de passe :</label>
-		        <input name='mdp' id='mdp' type='text'/>
-		        <br/><br/>";
-    echo "<input type='submit' value='Connexion'/></p></form>"; 
-
-?-->
