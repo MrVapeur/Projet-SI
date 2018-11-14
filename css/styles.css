@@ -19,12 +19,14 @@ body {
 }*/
 
 
-//test ici test
+
 
 html,
 body {
     height: 100%;
+    color: white;
 }
+
 
 body {
     display: -ms-flexbox;
@@ -34,6 +36,10 @@ body {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: #0c7489;
+}
+
+.etu{
+    background-color: darkblue;
 }
 
 .form-signin {

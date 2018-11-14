@@ -13,9 +13,16 @@
 
 </head>
 
-<body class="text-center">
+<body class="text-center etu">
+    
+    
+    <div class='container-fluid'>
+    
+        <div class="row">
+            <img class="mb-4 span6" style="float: none; margin: 0 auto; padding : 60px; " src="../img/White.png" alt="">
+        </div>
 
-<?php
+    <?php
 
     //Récupération du nom de l'étudiant
     $nom=$Data[0];
@@ -27,36 +34,43 @@
 
     $Result = $Connect->query($Query);
 
-    echo "<div>";
-        
-        if ($Data = mysqli_fetch_array($Result))
-        {
-            echo "<h1>Prochain cours</h1>";
-            echo "<br>";
-            echo "<p>$Data[0] - $Data[1]</p>";
-            echo "<br>";
-            echo "<p>$Data[2]</p>";
-            echo "<br>";
-            echo "<p>$Data[3]</p>";
-            echo "<br>";
-            echo "<p>$Data[4]</p>";
-            echo "<br>";
-        }
-        else
-        {
-            echo "Pause";
-        }
-    
+        echo "<div class='row justify-content-center'>";
+            echo "<div class='col-3'>";
+
+                if ($Data = mysqli_fetch_array($Result))
+                {
+                    echo "<h1>Prochain cours</h1>";
+                    echo "<br />";
+                    echo "<p>$Data[0] - $Data[1]</p>";
+                    echo "<br />";
+                    echo "<p>$Data[2]</p>";
+                    echo "<br />";
+                    echo "<p>$Data[3]</p>";
+                    echo "<br />";
+                    echo "<p>$Data[4]</p>";
+                    echo "<br />";
+                }
+                else
+                {
+                    echo "Pause";
+                }
+
+            echo "</div>";
+            echo "<div class='col-3'>";
+                echo "<div>";
+
+                //Formulaire pour rentrer le code
+                echo "<form action='codeEtudiant.php?nom=$nom&cours=$Data[2]' method='post'>";
+                    echo"<p>";
+                        echo "<label>Code :</label>";
+                        echo "<br />";
+                        echo "<input class='form-control' name='code' id='code' type='text' placeholder='Code de session' required/>";
+                        echo "<button class='btn btn-lg btn-primary bt-block' type='submit'>Valider sa présence</button>";
+                echo"</form>"; 
+                echo "</div>";
+            echo "</div>";
+        echo "</div>";
     echo "</div>";
-        
-    //Formulaire pour rentrer le code
-    echo "<form action='codeEtudiant.php?nom=$nom&cours=$Data[2]' method='post'>";
-        echo"<p>";
-            echo "<label>Code :</label>";
-            echo "<input name='code' id='code' type='text'/>";
-            echo "<input type='submit' value='Validation'/>";
-        echo"</p>";
-    echo"</form>"; 
 ?>
 
 </body>

@@ -23,39 +23,68 @@
 			$hour = date('G:i');
 			$Query = "SELECT * FROM $Data[0] WHERE debut < '$hour' and fin > '$hour'";
 			$Result = $Connect->query($Query);
+            
+            echo "<div class='container-fluid'>";
+            
+                echo "<div class='row'>";
+                
+                    echo "<div class='col-6'>";
 
-			if ($Data = mysqli_fetch_array($Result))
-			{
-				echo "<p>Prochain cours</p>";
-                echo "<br>";
-				echo "<p>$Data[0] - $Data[1]</p>";
-                echo "<br>";
-				echo "<p>$Data[2]</p>";
-                echo "<br>";
-                echo "<p>$Data[3]</p>";
-                echo "<br>";
-                echo "<p>$Data[4]</p>";
-                echo "<br>";
-			}
-			else
-			{
-				echo "<p>Pause</p>";
-			}
+                        if ($Data = mysqli_fetch_array($Result))
+                        {
+                            echo "<p>Prochain cours";
+                            echo "<br />";
+                            echo "$Data[0] - $Data[1]";
+                            echo "<br />";
+                            echo "$Data[2]";
+                            echo "<br />";
+                            echo "$Data[3]";
+                            echo "<br />";
+                            echo "$Data[4]</p>";
+                            echo "<br />";
+                        }
+                        else
+                        {
+                            echo "<p>Pause</p><br/>";
+                        }
 
-			//Formulaire pour créer un nouveau code et mettre la présence des étudiants à false
-			echo "<form action='code.php?nom=$nom&cours=$Data[2]&code=0000' method='post'>";
-			echo "<input type='submit' value='Creation du code'/>";
-            echo "</form>";
+                    echo "</div>";
+    
+                    echo "<div class='col-6'>";
+    
+                        echo "<div class='container'>";
+    
+                            echo "<div class='row'>";
 
-			//Formulaire pour afficher le nombre d'absences de chaque élève au cours actuel 
-			echo "<form action='affichageAbsences.php?cours=$Data[2]' method='post'>";
-			echo "<input type='submit' value='Affichage absences'/>";
-            echo"</form>";
+                                //Formulaire pour créer un nouveau code et mettre la présence des étudiants à false
+                                echo "<form action='code.php?nom=$nom&cours=$Data[2]&code=0000' method='post'>";
+                                echo "<input type='submit' value='Creation du code'/>";
+                                echo "</form>";
 
-			//Formulaire pour passer en mode appel manuel
-			echo "<form action='appelManuel.php?cours=$Data[2]' method='post'>";
-			echo "<input type='submit' value='Appel manuel'/>";
-            echo "</form>";
+                            echo "</div>";
+                            echo "<div class='row'>";
+
+                                //Formulaire pour afficher le nombre d'absences de chaque élève au cours actuel 
+                                echo "<form action='affichageAbsences.php?cours=$Data[2]' method='post'>";
+                                echo "<input type='submit' value='Affichage absences'/>";
+                                echo"</form>";
+
+                            echo "</div>";
+                            echo "<div class='row'>";
+
+                            //Formulaire pour passer en mode appel manuel
+                                echo "<form action='appelManuel.php?cours=$Data[2]' method='post'>";
+                                echo "<input type='submit' value='Appel manuel'/>";
+                                echo "</form>";
+                            echo "</div>";
+    
+                        echo "</div>";
+                    
+                    echo "</div>";
+
+                echo "</div>";
+    
+            echo "</div>";
 
 ?>
 
@@ -73,9 +102,9 @@
 
 			if ($Data = mysqli_fetch_array($Result))
 			{
-				echo "Prochain cours<br>";
-				echo "$Data[0] - $Data[1]<br>";
-				echo "$Data[2]<br>$Data[3]<br>$Data[4]<br>";
+				echo "Prochain cours<br />";
+				echo "$Data[0] - $Data[1]<br />";
+				echo "$Data[2]<br />$Data[3]<br />$Data[4]<br />";
 			}
 			else
 			{
